@@ -24,12 +24,12 @@
   <organization>
     <name>Google</name>
   </organization>
-  <!--<scm> ################ Do I need this anymore?
+  <scm>
     <connection>scm:git:git@github.com:testuser-aj/temptest2.git</connection>
     <developerConnection>scm:git:git@github.com:testuser-aj/temptest2.git</developerConnection>
     <url>https://github.com/testuser-aj/temptest2</url>
     <tag>HEAD</tag>
-  </scm>-->
+  </scm>
   <ciManagement>
     <system>Travis CI</system>
     <url>https://travis-ci.org/testuser-aj/temptest2</url>

@@ -19,7 +19,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         mvn site -DskipTests=true
         mvn site:stage -DtopSiteURL=http://testuser-aj.github.io/temptest2/site/${SITE_VERSION}/
         cd tmp_gh-pages
-        cp ../target/staging/$SITE_VERSION/* $SITE_VERSION/
+        cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/
         sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION}/index.html # Update "Quickstart with Maven" to reflect version change
         git add $SITE_VERSION
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
