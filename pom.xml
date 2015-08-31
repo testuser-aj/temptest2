@@ -4,9 +4,9 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.8-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>GCloud Java</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <url>https://github.com/testuser-aj/temptest2</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -24,18 +24,18 @@
   <organization>
     <name>Google</name>
   </organization>
-  <scm>
-    <connection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</connection>
-    <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</developerConnection>
-    <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <!--<scm> ################ Do I need this anymore?
+    <connection>scm:git:git@github.com:testuser-aj/temptest2.git</connection>
+    <developerConnection>scm:git:git@github.com:testuser-aj/temptest2.git</developerConnection>
+    <url>https://github.com/testuser-aj/temptest2</url>
     <tag>HEAD</tag>
-  </scm>
+  </scm>-->
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/GoogleCloudPlatform/gcloud-java</url>
+    <url>https://travis-ci.org/testuser-aj/temptest2</url>
   </ciManagement>
   <issueManagement>
-    <url>https://github.com/GoogleCloudPlatform/gcloud-java/issues</url>
+    <url>https://github.com/testuser-aj/temptest2/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>
@@ -47,11 +47,11 @@
       <id>sonatype-nexus-staging</id>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
-    <site>
+    <!--<site>
       <id>github-pages-site</id>
       <name>Deployment through GitHub's site deployment plugin</name>
-      <url>site/${project.version}/</url>
-    </site>
+      <url>${project.version}/</url> #############################################################  Site needs to be removed from this line!
+    </site>--> 
   </distributionManagement>
   <licenses>
     <license>
@@ -372,7 +372,7 @@
           </reportPlugins>
         </configuration>
       </plugin>
-      <plugin>
+      <!--<plugin> ########################################### Does this section need to exist anymore?
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
         <version>0.12</version>
@@ -390,7 +390,7 @@
             <phase>site-deploy</phase>
           </execution>
         </executions>
-      </plugin>
+      </plugin> -->
     </plugins>
   </build>
 </project>
