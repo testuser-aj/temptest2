@@ -17,7 +17,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git clone --branch gh-pages --single-branch https://github.com/testuser-aj/temptest2/ tmp_gh-pages
         mkdir -p tmp_gh-pages/$SITE_VERSION
         mvn site -DskipTests=true
-        mvn site:stage -DtopSiteURL=http://testuser-aj.github.io/temptest2/${SITE_VERSION}/
+        mvn site:stage -DtopSiteURL=http://testuser-aj.github.io/temptest2/site/${SITE_VERSION}/
         cd tmp_gh-pages
         cp ../target/staging/$SITE_VERSION/* $SITE_VERSION/
         sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION}/index.html # Update "Quickstart with Maven" to reflect version change
