@@ -50,4 +50,4 @@ git config --global user.name "travis-ci"
 git config --global user.email "travis@travis-ci.org"
 git commit -m "Updating version in README and pom.xml files."
 #git config --global push.default simple
-git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/testuser-aj/temptest2.git" HEAD:origin/master > /dev/null 2>&1
+git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/testuser-aj/temptest2.git" HEAD:origin/master # /dev/null 2>&1
