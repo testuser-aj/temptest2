@@ -20,12 +20,12 @@ NEW_SNAPSHOT_VERSION=${1:-$DEFAULT_UPDATE}-SNAPSHOT
 echo "Changing version to $RELEASED_VERSION in README files"
 echo "Changing version to $NEW_SNAPSHOT_VERSION in pom.xml files"
 
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" README.md
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" gcloud-java/README.md
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" gcloud-java-core/README.md
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" gcloud-java-datastore/README.md
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" gcloud-java-examples/README.md
-sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*</version>/<version>${RELEASED_VERSION}</version>/g" gcloud-java-storage/README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" gcloud-java/README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" gcloud-java-core/README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" gcloud-java-datastore/README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" gcloud-java-examples/README.md
+sed -ri "s/<version>[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*<\/version>/<version>${RELEASED_VERSION}<\/version>/g" gcloud-java-storage/README.md
 
 sed -i "0,/$RELEASED_VERSION/s/$RELEASED_VERSION/$NEW_SNAPSHOT_VERSION/g" pom.xml
 sed -i "0,/$RELEASED_VERSION/s/$RELEASED_VERSION/$NEW_SNAPSHOT_VERSION/g" gcloud-java/pom.xml
@@ -40,7 +40,7 @@ git add gcloud-java-core/README.md
 git add gcloud-java-datastore/README.md
 git add gcloud-java-examples/README.md
 git add gcloud-java-storage/README.md
-git add pom.mxl
+git add pom.xml
 git add gcloud-java/pom.xml
 git add gcloud-java-core/pom.xml
 git add gcloud-java-datastore/pom.xml
@@ -50,4 +50,4 @@ git config --global user.name "travis-ci"
 git config --global user.email "travis@travis-ci.org"
 git commit -m "Updating version in README and pom.xml files."
 git config --global push.default simple
-git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/testuser-aj/temptest.git" > /dev/null 2>
+git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/testuser-aj/temptest.git" > /dev/null 2>&1
