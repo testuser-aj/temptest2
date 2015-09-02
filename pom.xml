@@ -48,9 +48,9 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <site>
-      <id>github-pages-site</id>
-      <name>Deployment through GitHub's site deployment plugin</name>
-      <url>${project.version}/</url> <!--#########################################################  Site needs to be removed from this line!-->
+      <id>site</id>
+      <!--<name>Provides staging with </name>-->
+      <url>${project.version}/</url>
     </site>
   </distributionManagement>
   <licenses>
@@ -62,7 +62,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <github.global.server>github</github.global.server>
+    <!--<github.global.server>github</github.global.server>-->
   </properties>
   <modules>
     <module>gcloud-java-core</module>
