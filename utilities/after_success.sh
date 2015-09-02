@@ -7,7 +7,7 @@ echo "Travis branch:       " ${TRAVIS_BRANCH}
 echo "Travis pull request: " ${TRAVIS_PULL_REQUEST}
 echo "Travis JDK version:  " ${TRAVIS_JDK_VERSION}
 if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -a "${TRAVIS_PULL_REQUEST}" == "false" ]; then
-    mvn cobertura:cobertura coveralls:report
+    ###mvn cobertura:cobertura coveralls:report
 
     SITE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
     if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
@@ -16,8 +16,8 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git config --global user.email "travis@travis-ci.org"
         git clone --branch gh-pages --single-branch https://github.com/testuser-aj/temptest/ tmp_gh-pages
         mkdir -p tmp_gh-pages/$SITE_VERSION
-        mvn site -DskipTests=true
-        mvn site:stage -DtopSiteURL=http://googlecloudplatform.github.io/gcloud-java/site/${SITE_VERSION}/
+        ###mvn site -DskipTests=true
+        ###mvn site:stage -DtopSiteURL=http://googlecloudplatform.github.io/gcloud-java/site/${SITE_VERSION}/
         cd tmp_gh-pages
         cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/
         sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION}/index.html # Update "Quickstart with Maven" to reflect version change
