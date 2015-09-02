@@ -29,7 +29,7 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.1</version>
 </dependency>
 ```
 

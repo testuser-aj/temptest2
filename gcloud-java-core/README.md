@@ -1,5 +1,5 @@
 Google Cloud Java Client
-==========================
+=========================
 
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
