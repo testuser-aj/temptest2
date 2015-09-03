@@ -19,11 +19,11 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         ###mvn site -DskipTests=true
         ###mvn site:stage -DtopSiteURL=http://googlecloudplatform.github.io/gcloud-java/site/${SITE_VERSION}/
         cd tmp_gh-pages
-        ###cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/
+        cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/
         sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION}/index.html # Update "Quickstart with Maven" to reflect version change
         git add $SITE_VERSION
-        ###echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
-        ###git add index.html
+        echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
+        git add index.html
         git commit -m "Added a new site for version $SITE_VERSION and updated the root directory's redirect."
         git config --global push.default simple
         git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/testuser-aj/temptest2.git" > /dev/null 2>&1
